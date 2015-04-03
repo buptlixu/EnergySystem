@@ -49,6 +49,12 @@
     }
     if ([userInfoSettings boolForKey:@"saveButton"]) {
         [self.saveUserNameButton setSelected:YES];
+        [self.saveUserNameButton setBackgroundImage:[UIImage imageNamed:@"savePW"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [self.saveUserNameButton setSelected:NO];
+        [self.saveUserNameButton setBackgroundImage:[UIImage imageNamed:@"NotSavePW"] forState:UIControlStateNormal];
     }
 }
 
@@ -72,12 +78,16 @@
     
 }
 
-- (IBAction)checkBoxButton:(id)sender
+- (IBAction)checkBoxButton:(id)sender//根据当前状态对勾选框进行图形更改
 {
+    
     if (self.saveUserNameButton.selected) {
         [self.saveUserNameButton setSelected:NO];
+        [self.saveUserNameButton setBackgroundImage:[UIImage imageNamed:@"NotSavePW"] forState:UIControlStateNormal];
+        
     } else {
         [self.saveUserNameButton setSelected:YES];
+        [self.saveUserNameButton setBackgroundImage:[UIImage imageNamed:@"savePW"] forState:UIControlStateNormal];
     }
     
 }

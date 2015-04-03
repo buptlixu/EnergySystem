@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17C2EEF51ACE47C9005CD04A /* savePW.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2EEF41ACE47C9005CD04A /* savePW.png */; };
+		17C2EEF71ACE4957005CD04A /* NotSavePW.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2EEF61ACE4957005CD04A /* NotSavePW.png */; };
 		420113A419AC1E8700A0BF7F /* Idea Stuff 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */; };
 		4201143419ADDCC900A0BF7F /* ESMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4201143319ADDCC900A0BF7F /* ESMainViewController.m */; };
 		425159441A5BC3CD00A0B6D2 /* ESMD5Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 425159431A5BC3CD00A0B6D2 /* ESMD5Util.m */; };
@@ -73,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17C2EEF41ACE47C9005CD04A /* savePW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = savePW.png; sourceTree = "<group>"; };
+		17C2EEF61ACE4957005CD04A /* NotSavePW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotSavePW.png; sourceTree = "<group>"; };
 		420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Idea Stuff 2.png"; sourceTree = "<group>"; };
 		4201143219ADDCC900A0BF7F /* ESMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMainViewController.h; sourceTree = "<group>"; };
 		4201143319ADDCC900A0BF7F /* ESMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMainViewController.m; sourceTree = "<group>"; };
@@ -127,7 +131,7 @@
 		42F27A401AA80179005A9F92 /* ESSiteSearchCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSiteSearchCondition.m; sourceTree = "<group>"; };
 		42F27A421AA850AA005A9F92 /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = room.png; sourceTree = "<group>"; };
 		42F27A441AA851CD005A9F92 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
-		42F27A491AA854DD005A9F92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/icon.png; sourceTree = "<group>"; };
+		42F27A491AA854DD005A9F92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/icon.png; sourceTree = "<group>"; };
 		42F27A4B1AA856A4005A9F92 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42F27A4E1AA93EC0005A9F92 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		42F27A501AA94BED005A9F92 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
@@ -213,6 +217,8 @@
 				42F27A421AA850AA005A9F92 /* room.png */,
 				425449321A1F1DFC003DC549 /* login_page_bg.png */,
 				420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */,
+				17C2EEF41ACE47C9005CD04A /* savePW.png */,
+				17C2EEF61ACE4957005CD04A /* NotSavePW.png */,
 			);
 			name = images;
 			path = ..;
@@ -441,11 +447,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				420113A419AC1E8700A0BF7F /* Idea Stuff 2.png in Resources */,
+				17C2EEF71ACE4957005CD04A /* NotSavePW.png in Resources */,
 				42F27A451AA851CD005A9F92 /* title.png in Resources */,
 				42F27A4F1AA93EC0005A9F92 /* Images-2.xcassets in Resources */,
 				42F27A511AA94BED005A9F92 /* launch.png in Resources */,
 				42F27A431AA850AA005A9F92 /* room.png in Resources */,
 				42F27A481AA854DD005A9F92 /* icon.png in Resources */,
+				17C2EEF51ACE47C9005CD04A /* savePW.png in Resources */,
 				425449331A1F1DFC003DC549 /* login_page_bg.png in Resources */,
 				42F27A551AA9568C005A9F92 /* logout.png in Resources */,
 				42F27A571AA982BB005A9F92 /* setting.png in Resources */,
