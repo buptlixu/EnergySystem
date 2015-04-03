@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D127a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller - 能耗系统-->
+        <!--能耗系统-->
         <scene sceneID="qG7-cJ-vGl">
             <objects>
                 <viewController id="pmr-un-b6C" customClass="ESMainViewController" sceneMemberID="viewController">
@@ -69,7 +70,7 @@
             </objects>
             <point key="canvasLocation" x="7" y="-868"/>
         </scene>
-        <!--Config City View Controller - 市级列表-->
+        <!--市级列表-->
         <scene sceneID="jxp-MD-VCf">
             <objects>
                 <tableViewController id="5eX-ev-nH1" customClass="ESConfigCityViewController" sceneMemberID="viewController">
@@ -103,7 +104,7 @@
             </objects>
             <point key="canvasLocation" x="898" y="-886"/>
         </scene>
-        <!--Config County View Controller - 区县列表-->
+        <!--区县列表-->
         <scene sceneID="adB-GE-ofk">
             <objects>
                 <tableViewController id="xee-kQ-2AS" customClass="ESConfigCountyViewController" sceneMemberID="viewController">
@@ -137,7 +138,7 @@
             </objects>
             <point key="canvasLocation" x="1353" y="-886"/>
         </scene>
-        <!--Config Final View Controller - room-->
+        <!--room-->
         <scene sceneID="Wkw-OS-Pmq">
             <objects>
                 <viewController title="room" id="bQi-Vf-dHk" customClass="ESConfigFinalViewController" sceneMemberID="viewController">
@@ -196,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="1833" y="-880"/>
         </scene>
-        <!--Config Final View Controller - site-->
+        <!--site-->
         <scene sceneID="bEJ-tn-3d0">
             <objects>
                 <viewController title="site" id="Vfq-od-g93" customClass="ESConfigFinalViewController" sceneMemberID="viewController">
@@ -232,7 +233,7 @@
             </objects>
             <point key="canvasLocation" x="2715" y="-370"/>
         </scene>
-        <!--Config Table View Controller - 省级列表-->
+        <!--省级列表-->
         <scene sceneID="PRI-vh-Guz">
             <objects>
                 <tableViewController id="GF9-P6-XqK" customClass="ESConfigTableViewController" sceneMemberID="viewController">
@@ -282,10 +283,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AQk-nK-BAn">
-                                <rect key="frame" x="52" y="334" width="217" height="30"/>
+                                <rect key="frame" x="52" y="334" width="217" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title=" 登录">
+                                <color key="backgroundColor" red="0.66591698232323226" green="0.34865353428977125" blue="0.03172198633861846" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="19"/>
+                                <state key="normal" title=" 登     录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -293,9 +296,10 @@
                                     <action selector="loginStartOn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KpF-7z-7CO"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户" minimumFontSize="17" clearButtonMode="whileEditing" id="ob3-yO-W2D">
-                                <rect key="frame" x="52" y="241" width="217" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户" minimumFontSize="17" clearButtonMode="whileEditing" id="ob3-yO-W2D">
+                                <rect key="frame" x="52" y="231" width="217" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -303,19 +307,6 @@
                                     <action selector="userNameTextFieldDidEndOnExit:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="u8V-6r-SBv"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" clearsOnBeginEditing="YES" minimumFontSize="17" id="ohF-TI-wrJ">
-                                <rect key="frame" x="52" y="279" width="217" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="passWordTextFieldDidEndOnExit:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="Mfy-KF-tPy"/>
-                                </connections>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="TGj-tB-O83">
-                                <rect key="frame" x="40" y="68" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oSH-a0-eRW">
                                 <rect key="frame" x="67" y="412" width="43" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -329,13 +320,27 @@
                                     <action selector="checkBoxButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="N5X-gU-iDL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记住密码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tAT-YU-Epl">
-                                <rect key="frame" x="90" y="416" width="107" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="TGj-tB-O83">
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Energy System" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0cp-Fn-fV7">
+                                <rect key="frame" x="0.0" y="98" width="320" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="44"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.64999999999999969" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" clearsOnBeginEditing="YES" minimumFontSize="21" id="ohF-TI-wrJ">
+                                <rect key="frame" x="52" y="277" width="217" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="passWordTextFieldDidEndOnExit:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="Mfy-KF-tPy"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
@@ -468,7 +473,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rGG-ks-V6k"/>
+        <segue reference="3nL-dF-u93"/>
         <segue reference="3QT-im-18l"/>
     </inferredMetricsTieBreakers>
 </document>
