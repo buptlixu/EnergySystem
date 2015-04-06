@@ -138,6 +138,15 @@
         }
         loginHUD.labelText = @"登录中...";
         [loginHUD showWhileExecuting:@selector(login) onTarget:self withObject:nil animated:YES];
+        
+        ESDataManageDelegate * dataManageDelegate = [[ESDataManageDelegate alloc] init];
+        BOOL firstOrNot = [dataManageDelegate goToMainViewWithFirstLoginDelegate];
+        if (firstOrNot == YES) {
+            [self goToGuideView];
+        } else {
+            [self goToMainView];
+        }
+        [dataManageDelegate release];
     }
     
     [loginHUD release];

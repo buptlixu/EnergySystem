@@ -154,7 +154,7 @@
     ESUserConfigInfo *configData = [[ESUserConfigInfo alloc] init];
     configData.userid = [userInfoDictionary objectForKey:@"uid"];
     
-    NSString *querySQL = [NSString stringWithFormat:@"SELECT COUNT(*) AS NUM FROM CONFIG WHERE USERID = %d",
+    NSString *querySQL = [NSString stringWithFormat:@"SELECT COUNT(*) AS NUM FROM TITLETABLE WHERE USERID = %d",
                           [configData.userid intValue]];
     
     ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
