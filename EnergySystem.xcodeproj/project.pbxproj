@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170ED4EF1AD376D7002FA08D /* main_page_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 170ED4EE1AD376D7002FA08D /* main_page_bg.png */; };
 		17C2EEF51ACE47C9005CD04A /* savePW.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2EEF41ACE47C9005CD04A /* savePW.png */; };
 		17C2EEF71ACE4957005CD04A /* NotSavePW.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2EEF61ACE4957005CD04A /* NotSavePW.png */; };
 		420113A419AC1E8700A0BF7F /* Idea Stuff 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		170ED4EE1AD376D7002FA08D /* main_page_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page_bg.png; sourceTree = "<group>"; };
 		17C2EEF41ACE47C9005CD04A /* savePW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = savePW.png; sourceTree = "<group>"; };
 		17C2EEF61ACE4957005CD04A /* NotSavePW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotSavePW.png; sourceTree = "<group>"; };
 		420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Idea Stuff 2.png"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				42F27A421AA850AA005A9F92 /* room.png */,
 				425449321A1F1DFC003DC549 /* login_page_bg.png */,
 				420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */,
+				170ED4EE1AD376D7002FA08D /* main_page_bg.png */,
 				17C2EEF41ACE47C9005CD04A /* savePW.png */,
 				17C2EEF61ACE4957005CD04A /* NotSavePW.png */,
 			);
@@ -450,6 +453,7 @@
 				17C2EEF71ACE4957005CD04A /* NotSavePW.png in Resources */,
 				42F27A451AA851CD005A9F92 /* title.png in Resources */,
 				42F27A4F1AA93EC0005A9F92 /* Images-2.xcassets in Resources */,
+				170ED4EF1AD376D7002FA08D /* main_page_bg.png in Resources */,
 				42F27A511AA94BED005A9F92 /* launch.png in Resources */,
 				42F27A431AA850AA005A9F92 /* room.png in Resources */,
 				42F27A481AA854DD005A9F92 /* icon.png in Resources */,
