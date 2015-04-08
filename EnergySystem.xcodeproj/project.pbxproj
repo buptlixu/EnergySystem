@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		170ED4EF1AD376D7002FA08D /* main_page_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 170ED4EE1AD376D7002FA08D /* main_page_bg.png */; };
+		17B0A6E91AD4C2060094C092 /* nvg_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B0A6E81AD4C2060094C092 /* nvg_bg.png */; };
+		17B0A6F11AD4CC320094C092 /* ESSearchMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B0A6F01AD4CC320094C092 /* ESSearchMainViewController.m */; };
+		17B0A6F31AD4CCD80094C092 /* general_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B0A6F21AD4CCD80094C092 /* general_bg.png */; };
 		17C2EEF51ACE47C9005CD04A /* savePW.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2EEF41ACE47C9005CD04A /* savePW.png */; };
-		17C2EEF71ACE4957005CD04A /* NotSavePW.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2EEF61ACE4957005CD04A /* NotSavePW.png */; };
+		17C2EEF71ACE4957005CD04A /* notSavePW.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2EEF61ACE4957005CD04A /* notSavePW.png */; };
 		420113A419AC1E8700A0BF7F /* Idea Stuff 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */; };
 		4201143419ADDCC900A0BF7F /* ESMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4201143319ADDCC900A0BF7F /* ESMainViewController.m */; };
 		425159441A5BC3CD00A0B6D2 /* ESMD5Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 425159431A5BC3CD00A0B6D2 /* ESMD5Util.m */; };
@@ -77,8 +80,12 @@
 
 /* Begin PBXFileReference section */
 		170ED4EE1AD376D7002FA08D /* main_page_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_page_bg.png; sourceTree = "<group>"; };
+		17B0A6E81AD4C2060094C092 /* nvg_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nvg_bg.png; sourceTree = "<group>"; };
+		17B0A6EF1AD4CC320094C092 /* ESSearchMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSearchMainViewController.h; sourceTree = "<group>"; };
+		17B0A6F01AD4CC320094C092 /* ESSearchMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSearchMainViewController.m; sourceTree = "<group>"; };
+		17B0A6F21AD4CCD80094C092 /* general_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = general_bg.png; sourceTree = "<group>"; };
 		17C2EEF41ACE47C9005CD04A /* savePW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = savePW.png; sourceTree = "<group>"; };
-		17C2EEF61ACE4957005CD04A /* NotSavePW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotSavePW.png; sourceTree = "<group>"; };
+		17C2EEF61ACE4957005CD04A /* notSavePW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notSavePW.png; sourceTree = "<group>"; };
 		420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Idea Stuff 2.png"; sourceTree = "<group>"; };
 		4201143219ADDCC900A0BF7F /* ESMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESMainViewController.h; sourceTree = "<group>"; };
 		4201143319ADDCC900A0BF7F /* ESMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESMainViewController.m; sourceTree = "<group>"; };
@@ -210,18 +217,20 @@
 		420113A219AC1E6700A0BF7F /* images */ = {
 			isa = PBXGroup;
 			children = (
-				42F27A561AA982BB005A9F92 /* setting.png */,
-				42F27A541AA9568C005A9F92 /* logout.png */,
-				42F27A521AA9561D005A9F92 /* warn.png */,
-				42F27A501AA94BED005A9F92 /* launch.png */,
+				17B0A6F21AD4CCD80094C092 /* general_bg.png */,
 				42F27A4A1AA854DD005A9F92 /* icon.png */,
-				42F27A441AA851CD005A9F92 /* title.png */,
-				42F27A421AA850AA005A9F92 /* room.png */,
-				425449321A1F1DFC003DC549 /* login_page_bg.png */,
 				420113A319AC1E8700A0BF7F /* Idea Stuff 2.png */,
+				42F27A501AA94BED005A9F92 /* launch.png */,
+				425449321A1F1DFC003DC549 /* login_page_bg.png */,
+				42F27A541AA9568C005A9F92 /* logout.png */,
 				170ED4EE1AD376D7002FA08D /* main_page_bg.png */,
+				17C2EEF61ACE4957005CD04A /* notSavePW.png */,
+				17B0A6E81AD4C2060094C092 /* nvg_bg.png */,
+				42F27A421AA850AA005A9F92 /* room.png */,
 				17C2EEF41ACE47C9005CD04A /* savePW.png */,
-				17C2EEF61ACE4957005CD04A /* NotSavePW.png */,
+				42F27A561AA982BB005A9F92 /* setting.png */,
+				42F27A441AA851CD005A9F92 /* title.png */,
+				42F27A521AA9561D005A9F92 /* warn.png */,
 			);
 			name = images;
 			path = ..;
@@ -234,6 +243,8 @@
 				4261B70819AB242F00A91C86 /* ESLoginViewController.m */,
 				4201143219ADDCC900A0BF7F /* ESMainViewController.h */,
 				4201143319ADDCC900A0BF7F /* ESMainViewController.m */,
+				17B0A6EF1AD4CC320094C092 /* ESSearchMainViewController.h */,
+				17B0A6F01AD4CC320094C092 /* ESSearchMainViewController.m */,
 				42F27A361AA6A3E1005A9F92 /* ESTitleManageViewController.h */,
 				42F27A371AA6A3E1005A9F92 /* ESTitleManageViewController.m */,
 				42F27A391AA6EB20005A9F92 /* ESTitleDetailViewController.h */,
@@ -449,9 +460,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B0A6E91AD4C2060094C092 /* nvg_bg.png in Resources */,
 				420113A419AC1E8700A0BF7F /* Idea Stuff 2.png in Resources */,
-				17C2EEF71ACE4957005CD04A /* NotSavePW.png in Resources */,
+				17C2EEF71ACE4957005CD04A /* notSavePW.png in Resources */,
 				42F27A451AA851CD005A9F92 /* title.png in Resources */,
+				17B0A6F31AD4CCD80094C092 /* general_bg.png in Resources */,
 				42F27A4F1AA93EC0005A9F92 /* Images-2.xcassets in Resources */,
 				170ED4EF1AD376D7002FA08D /* main_page_bg.png in Resources */,
 				42F27A511AA94BED005A9F92 /* launch.png in Resources */,
@@ -491,6 +504,7 @@
 				42F27A731AC2A3B2005A9F92 /* ESSearchResultChartViewController.m in Sources */,
 				4261B72C19AB271B00A91C86 /* MBProgressHUD.m in Sources */,
 				42F8EFEB1A5BDD9B008D1F3E /* ESDownLoadFile.m in Sources */,
+				17B0A6F11AD4CC320094C092 /* ESSearchMainViewController.m in Sources */,
 				42753DC919AE034200CA3D44 /* ESSqliteUtil.m in Sources */,
 				42F27A6B1AC2A1EF005A9F92 /* UUBarChart.m in Sources */,
 				425159441A5BC3CD00A0B6D2 /* ESMD5Util.m in Sources */,

@@ -20,8 +20,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"main_page_bg.png"]];
-	
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

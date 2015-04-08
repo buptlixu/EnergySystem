@@ -23,6 +23,7 @@
     
     //加载NSUserDefaults中保存的用户名密码
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_page_bg.png"]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [self loadSavedUserInfo];
     
 }
@@ -54,7 +55,7 @@
     else
     {
         [self.saveUserNameButton setSelected:NO];
-        [self.saveUserNameButton setBackgroundImage:[UIImage imageNamed:@"NotSavePW"] forState:UIControlStateNormal];
+        [self.saveUserNameButton setBackgroundImage:[UIImage imageNamed:@"notSavePW"] forState:UIControlStateNormal];
     }
 }
 
