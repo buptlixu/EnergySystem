@@ -26,16 +26,15 @@
     [pTableView setDataSource:self];
     
 	// Do any additional setup after loading the view.
-    
         
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"general_bg.png"]];
 }
-
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -235,7 +234,8 @@
         [self insertSearchConditionIntoDB:rsc];
         
         //segue to mainView
-        [self goToMainView];
+//        [self goToMainView];
+        [self performSegueWithIdentifier:@"mainNavCon" sender:self];
     }
     
 }
@@ -253,8 +253,15 @@
         
         if (![sqlUtil execSQL:insertSQL]) {
             NSLog(@"INSERT ERROR");
+            //目前阶段将插入操作失败全部视为命名重复
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:@"警告"
+                                      message:@"标题命名不可重复，存储失败！"
+                                      delegate:nil
+                                      cancelButtonTitle:nil
+                                      otherButtonTitles:@"Ok", nil];
+            [alertView show];
         }
-        
     }
 }
 

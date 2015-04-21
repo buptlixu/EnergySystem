@@ -23,6 +23,7 @@
 {
     
     [super viewDidLoad];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     
     //加载数据库中的标题
     _names = [[NSMutableArray alloc] init];
@@ -34,9 +35,6 @@
     [self loadTitleTable];
     [pTableView setDataSource:self];
     [pTableView setDelegate:self];
-    
-    
-    
 }
 
 - (void)loadTitleTable
@@ -65,10 +63,10 @@
         NSLog(@"数据库打开失败");
         [sqlUtil close];
     }
-    if ([sqlUtil open]) {
-        
-        
-    }
+//    if ([sqlUtil open]) {
+//        
+//        
+//    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

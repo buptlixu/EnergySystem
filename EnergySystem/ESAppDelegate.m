@@ -17,7 +17,6 @@
     //使用IQKeyboardManager,解决虚拟键盘遮挡输入框问题
     [[IQKeyboardManager sharedManager] setEnable:YES];
     [[IQKeyboardManager sharedManager] setKeyboardDistanceFromTextField:60];
-    
     return YES;
 }
 							

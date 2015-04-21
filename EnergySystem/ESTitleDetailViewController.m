@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     NSLog(@"%@",self.name);
     _data = [[NSMutableArray alloc] init];
     
@@ -29,6 +29,13 @@
     [pTableView setDataSource:self];
     [pTableView setDelegate:self];
 	// Do any additional setup after loading the view.
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"general_bg.png"]];
 }
 
 - (void) loadTitleDetailInfoFromDB
