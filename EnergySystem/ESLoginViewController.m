@@ -139,18 +139,18 @@
         }
         loginHUD.labelText = @"登录中...";
         [loginHUD showWhileExecuting:@selector(login) onTarget:self withObject:nil animated:YES];
-        
-        ESDataManageDelegate * dataManageDelegate = [[ESDataManageDelegate alloc] init];
-        BOOL firstOrNot = [dataManageDelegate goToMainViewWithFirstLoginDelegate];
-        if (firstOrNot == YES) {
-            [self goToGuideView];
-        } else {
-            [self goToMainView];
-        }
-        [dataManageDelegate release];
     }
     
     [loginHUD release];
+    
+    //服务器未开启时使用，进行正常登录跳转
+    if ([self.delegate goToMainViewWithFirstLoginDelegate]){
+        [self performSelectorOnMainThread:@selector(goToGuideView) withObject:nil waitUntilDone:FALSE];
+    } else {
+        [self performSelectorOnMainThread:@selector(goToMainView) withObject:nil waitUntilDone:FALSE];
+    }
+    
+    
 }
 
 //委托连接服务器端，验证用户名／密码

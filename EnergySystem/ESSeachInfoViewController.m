@@ -7,7 +7,7 @@
 //
 
 #import "ESSeachInfoViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 @interface ESSeachInfoViewController ()
 
 @end
@@ -24,15 +24,14 @@
     pTableView.hidden = YES;
     [pTableView setDelegate:self];
     [pTableView setDataSource:self];
-    
 	// Do any additional setup after loading the view.
-        
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    self.navigationItem.title=@"机房查询设置";
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"general_bg.png"]];
 }
 
@@ -268,7 +267,7 @@
 - (void)dbCreateTable
 {
     //查询config表是否已建立
-    NSString *sqlCreateTable = @"CREATE TABLE IF NOT EXISTS TITLETABLE (USERID INTEGER,NAME TEXT,TYPE TEXT,PROVINCE TEXT,CITY TEXT,COUNTY TEXT,BUILDING TEXT,ROOM TEXT,SITE TEXT,KPI TEXT,TIME TEXT,ORDERINFO TEXT)";
+    NSString *sqlCreateTable = @"CREATE TABLE IF NOT EXISTS TITLETABLE (USERID INTEGER,NAME TEXT,TYPE TEXT,PROVINCE TEXT,CITY TEXT,COUNTY TEXT,BUILDING TEXT,ROOM TEXT,SITE TEXT,KPI TEXT,TIME TEXT,ORDERINFO TEXT, PRIMARY KEY(NAME))";
     
     ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
     if ([sqlUtil open]) {

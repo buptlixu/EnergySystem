@@ -35,6 +35,7 @@
     [self loadTitleTable];
     [pTableView setDataSource:self];
     [pTableView setDelegate:self];
+//    [self.pTableView scrollRectToVisible:CGRectMake(0, 0, self.pTableView.contentSize.width, self.pTableView.contentSize.height) animated:YES];
 }
 
 - (void)loadTitleTable
@@ -94,14 +95,20 @@
                 reuseIdentifier:CellIdentifier];
     }
     
+    
+    
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [_names objectAtIndex:row];
     cell.detailTextLabel.text = [_types objectAtIndex:row];
+    if ([[_types objectAtIndex:row]  isEqual: @"机房"]) {
+        cell.imageView.image = [UIImage imageNamed:@"room.png"];
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"base_station.png"];
+    }
     cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:@"、"];
     cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:[_provinces objectAtIndex:row]];
     cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:@"、"];
     cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:[_cities objectAtIndex:row]];
-    
     
     return cell;
 }
@@ -122,7 +129,7 @@
         
         if ([sqlUtil open]) {
             if (![sqlUtil execSQL:deleteSQL]) {
-                NSLog(@"INSERT ERROR");
+                NSLog(@"DELETE ERROR");
             }
 
             [sqlUtil close];

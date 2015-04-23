@@ -224,6 +224,7 @@
 {
     //open db
     ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
+    
     if ([sqlUtil open]) {
         NSString *insertSQL = @"INSERT INTO TITLETABLE VALUES";
         NSString *appendSQL = [NSString stringWithFormat:@" (%d,'%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",[ssc.uid intValue],ssc.name,@"基站",ssc.province,ssc.city,ssc.couty,@"",@"",ssc.site,ssc.kpi,ssc.time,ssc.order];
@@ -247,7 +248,7 @@
 - (void)dbCreateTable
 {
     //查询config表是否已建立
-    NSString *sqlCreateTable = @"CREATE TABLE IF NOT EXISTS TITLETABLE (USERID INTEGER,NAME TEXT,TYPE TEXT,PROVINCE TEXT,CITY TEXT,COUNTY TEXT,BUILDING TEXT,ROOM TEXT,SITE TEXT,KPI TEXT,TIME TEXT,ORDERINFO TEXT)";
+    NSString *sqlCreateTable = @"CREATE TABLE IF NOT EXISTS TITLETABLE (USERID INTEGER,NAME TEXT,TYPE TEXT,PROVINCE TEXT,CITY TEXT,COUNTY TEXT,BUILDING TEXT,ROOM TEXT,SITE TEXT,KPI TEXT,TIME TEXT,ORDERINFO TEXT, PRIMARY KEY(NAME))";
     
     ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
     if ([sqlUtil open]) {
