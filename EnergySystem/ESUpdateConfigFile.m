@@ -47,8 +47,6 @@
             [dlf performSelectorOnMainThread:@selector(downloadFile:)
                                   withObject:companyIdNSString
                                waitUntilDone:YES];
-            
-            
         }
         
         /*

@@ -109,82 +109,38 @@
     urlAsString = [urlAsString stringByAppendingString:configAction];
     urlAsString = [urlAsString stringByAppendingString:companyIdNSString];
     
-//    if (sender == self.provinceBtn) {
-//        //省份为空，获取新的省级信息
-//        pTableView.frame = CGRectMake(self.provinceText.frame.origin.x, self.provinceText.frame.origin.y + self.provinceText.frame.size.height, 0.75*self.provinceText.frame.size.width, 4*self.provinceText.frame.size.height);
-//        pTableView.center = self.provinceText.center;
-//        NSLog(@"provinceBtn");
-//    } else if (sender == self.cityBtn) {
-//        NSLog(@"cityBtn");
-//        pTableView.center = self.cityText.center;
-//        urlAsString = [urlAsString stringByAppendingString:@"&province="];
-//        urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
-//
-//    } else if (sender == self.countyBtn) {
-//        NSLog(@"countyBtn");
-//        pTableView.center = self.countyText.center;
-//        urlAsString = [urlAsString stringByAppendingString:@"&province="];
-//        urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
-//        urlAsString = [urlAsString stringByAppendingString:@"&city="];
-//        urlAsString = [urlAsString stringByAppendingString:self.cityText.text];
-//    } else if (sender == self.buildingBtn) {
-//        pTableView.center = self.buildingText.center;
-//        urlAsString = [urlAsString stringByAppendingString:@"&province="];
-//        urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
-//        urlAsString = [urlAsString stringByAppendingString:@"&city="];
-//        urlAsString = [urlAsString stringByAppendingString:self.cityText.text];
-//        urlAsString = [urlAsString stringByAppendingString:@"&country="];
-//        urlAsString = [urlAsString stringByAppendingString:self.countyText.text];
-//        urlAsString = [urlAsString stringByAppendingString:@"&type="];
-//        urlAsString = [urlAsString stringByAppendingString:@"机楼"];
-//    } else if (sender == self.roomBtn) {
-//        pTableView.center = self.roomText.center;
-//        urlAsString = [urlAsString stringByAppendingString:@"&province="];
-//        urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
-//        urlAsString = [urlAsString stringByAppendingString:@"&city="];
-//        urlAsString = [urlAsString stringByAppendingString:self.cityText.text];
-//        urlAsString = [urlAsString stringByAppendingString:@"&country="];
-//        urlAsString = [urlAsString stringByAppendingString:self.countyText.text];
-//        urlAsString = [urlAsString stringByAppendingString:@"&type="];
-//        urlAsString = [urlAsString stringByAppendingString:@"机房"];
-//        urlAsString = [urlAsString stringByAppendingString:@"&building="];
-//        urlAsString = [urlAsString stringByAppendingString:self.buildingText.text];
-//    }
-    
-
+    BOOL flag = FALSE;
     if (sender == self.provinceBtn)
     {
         //省份为空，获取新的省级信息
         pTableView.frame = CGRectMake(self.provinceText.frame.origin.x, self.provinceText.frame.origin.y + self.provinceText.frame.size.height, 0.75*self.provinceText.frame.size.width, 4*self.provinceText.frame.size.height);
         pTableView.center = self.provinceText.center;
+        flag = TRUE;
     }
     else if (sender == self.cityBtn)
     {
-        if (!self.provinceText.text) {
+        if (self.provinceText.text.length != 0) {
             pTableView.center = self.cityText.center;
             urlAsString = [urlAsString stringByAppendingString:@"&province="];
             urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
-            NSLog(@"徐%@冰", self.provinceText.text);
-        } else {
-            NSLog(@"请先选择上级信息");
+            flag = TRUE;
         }
     }
     else if (sender == self.countyBtn)
     {
-        if (!self.provinceText.text && !self.cityText.text) {
+        if (self.provinceText.text.length != 0 && self.cityText.text.length != 0) {
             NSLog(@"countyBtn");
             pTableView.center = self.countyText.center;
             urlAsString = [urlAsString stringByAppendingString:@"&province="];
             urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
             urlAsString = [urlAsString stringByAppendingString:@"&city="];
             urlAsString = [urlAsString stringByAppendingString:self.cityText.text];
-        } else {
-            NSLog(@"请先选择上级信息");
+            flag = TRUE;
         }
     }
     else if (sender == self.buildingBtn)
     {
-        if (!self.provinceText.text && !self.cityText.text && !self.countyText.text) {
+        if (self.provinceText.text.length != 0 && self.cityText.text.length != 0 && self.countyText.text.length != 0) {
             pTableView.center = self.buildingText.center;
             urlAsString = [urlAsString stringByAppendingString:@"&province="];
             urlAsString = [urlAsString stringByAppendingString:self.provinceText.text];
@@ -194,14 +150,13 @@
             urlAsString = [urlAsString stringByAppendingString:self.countyText.text];
             urlAsString = [urlAsString stringByAppendingString:@"&type="];
             urlAsString = [urlAsString stringByAppendingString:@"机楼"];
-        } else {
-            NSLog(@"请先选择上级信息");
+            flag = TRUE;
         }
     }
     else if (sender == self.roomBtn)
     {
-        if (!self.provinceText.text && !self.cityText.text &&
-            !self.countyText.text & !self.buildingText.text)
+        if (self.provinceText.text.length != 0 && self.cityText.text.length != 0 &&
+            self.countyText.text.length != 0 && self.buildingText.text.length != 0)
         {
             pTableView.center = self.roomText.center;
             urlAsString = [urlAsString stringByAppendingString:@"&province="];
@@ -214,41 +169,48 @@
             urlAsString = [urlAsString stringByAppendingString:@"机房"];
             urlAsString = [urlAsString stringByAppendingString:@"&building="];
             urlAsString = [urlAsString stringByAppendingString:self.buildingText.text];
-        }
-        else
-        {
-            NSLog(@"请先选择上级信息");
+            flag = TRUE;
         }
     }
 
-    urlAsString = [urlAsString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"%@",urlAsString);
-    NSURL *url = [NSURL URLWithString:urlAsString];
-        
-    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
-    [urlRequest setTimeoutInterval:NETWORKTIMEOUT];
-    [urlRequest setHTTPMethod:@"POST"];
-        
-    //发送同步Http信息
-    NSURLResponse *response = nil;
-    NSError *connectionError = nil;
-    NSData *tmpData = [NSURLConnection sendSynchronousRequest:urlRequest
-                                            returningResponse:&response
-                                                        error:&connectionError];
-    if ([tmpData length] > 0) {
-        NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:tmpData
-                                                                   options:kNilOptions
-                                                                     error:nil];
-        NSNumber *status = [resultData objectForKey:@"status"];
-        if ([status intValue] == 200) {
-            _data = [resultData objectForKey:@"name"];
-            [_data retain];
-            [pTableView reloadData];
+    if (flag) {
+        urlAsString = [urlAsString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSLog(@"%@",urlAsString);
+        NSURL *url = [NSURL URLWithString:urlAsString];
+            
+        NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+        [urlRequest setTimeoutInterval:NETWORKTIMEOUT];
+        [urlRequest setHTTPMethod:@"POST"];
+            
+        //发送同步Http信息
+        NSURLResponse *response = nil;
+        NSError *connectionError = nil;
+        NSData *tmpData = [NSURLConnection sendSynchronousRequest:urlRequest
+                                                returningResponse:&response
+                                                            error:&connectionError];
+        if ([tmpData length] > 0) {
+            NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:tmpData
+                                                                       options:kNilOptions
+                                                                         error:nil];
+            NSNumber *status = [resultData objectForKey:@"status"];
+            if ([status intValue] == 200) {
+                _data = [resultData objectForKey:@"name"];
+                [_data retain];
+                [pTableView reloadData];
+            }
         }
+        pTableView.hidden = NO;
     }
-    
-    pTableView.hidden = NO;
-    
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"警告"
+                                  message:@"请先选择上级信息！"
+                                  delegate:nil
+                                  cancelButtonTitle:nil
+                                  otherButtonTitles:@"Ok", nil];
+        [alertView show];
+    }
 }
 
 - (IBAction)getStaticConfigList:(id)sender

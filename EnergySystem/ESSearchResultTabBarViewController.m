@@ -26,7 +26,7 @@
     NSString *url = [self generateURLString];
     NSLog(@"%@",url);
     
-    [self getSearchResultFromServer:url];
+    [self getSearchResultFromServer:url];//从服务器端查询数据，在方法中已将结果存入_data
     
     if ([self.viewControllers[0] isKindOfClass:[ESSearchResultViewController class]]) {
         ESSearchResultViewController *srv =
@@ -39,10 +39,9 @@
                                 (ESSearchResultChartViewController *)self.viewControllers[1];
         srcv.data = _data;
     }
-    
-    
 }
 
+#warning 与数据库对应，列出所有kpi值
 - (void) translateKPI
 {
     if ([self.scDataModel.kpi isEqualToString:@"机房空调耗电"]
@@ -90,20 +89,40 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
 
-#warning "目前为测试阶段的数据，时间设定为指定内容，实际应用时需切换为当前时间"
+//warning "目前为测试阶段的数据，时间设定为指定内容，实际应用时需切换为当前时间"
     NSDate *start = [dateFormatter dateFromString:@"2012-04-06"];
     NSDate *end = [[NSDate alloc] init];
     
     if ([self.scDataModel.time isEqualToString:@"日"]) {
         end = [NSDate dateWithTimeInterval:60*60*24*7 sinceDate:start];
-        
-        NSLog(@"%@ and %@",self.scDataModel.startDate,self.scDataModel.endDate);
     } else if ([self.scDataModel.time isEqualToString:@"小时"]) {
         end = [NSDate dateWithTimeInterval:60*60*24 sinceDate:start];
     }
     
     self.scDataModel.startDate = [dateFormatter stringFromDate:start];
     self.scDataModel.endDate = [dateFormatter stringFromDate:end];
+    
+
+//XB实现以当前日期为起点的查询，但数据库为空，因此继续使用之前代码
+//    //获取当前时间，赋给localDate
+//    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+//    NSDate *date = [NSDate date];
+//    NSInteger interval = [zone secondsFromGMTForDate: date];
+//    NSDate *localDate = [date  dateByAddingTimeInterval: interval];
+//    NSLog(@"当前时间 localDate = %@",localDate);
+//    
+//    NSDate *before = [[NSDate alloc] init];//记录日期起点
+//    if ([self.scDataModel.time isEqualToString:@"日"])
+//    {
+//        before = [NSDate dateWithTimeInterval:-60*60*24*7 sinceDate:localDate];//显示7天前，使用负数，sinceDate赋值为当前值
+//    }
+//    else if ([self.scDataModel.time isEqualToString:@"小时"])
+//    {
+//        before = [NSDate dateWithTimeInterval:-60*60*24 sinceDate:localDate];
+//    }
+//    self.scDataModel.startDate = [dateFormatter stringFromDate:before];
+//    self.scDataModel.endDate = [dateFormatter stringFromDate:localDate];
+    
     
     //排序信息，以当前选择的KPI作为排序指标
     if (self.scDataModel.sort != nil) {
@@ -123,7 +142,7 @@
     return url;
 }
 
-- (void)getSearchResultFromServer:(NSString *)urlAsString
+- (void)getSearchResultFromServer:(NSString *)urlAsString//传入参数为生成好的url查询语句
 {
     urlAsString = [urlAsString
                    stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -160,9 +179,8 @@
             
             [_data retain];
         }
+        NSLog(@"当前有%d个数据",[_data count]);
     }
-    
-    
 }
 
 @end

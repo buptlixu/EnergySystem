@@ -10,7 +10,7 @@
 
 @implementation ESDataManageDelegate
 
-- (void) loginDeletegate:(NSString *) username
+- (void) loginDelegate:(NSString *) username
                         :(NSString *) password
                         :(NSMutableDictionary *) result
 {
@@ -69,84 +69,85 @@
     [data appendData:tmpData];
 }
 
-- (BOOL) storeConfigInfoToDBDelegate:(NSDictionary *)data
-                                    :(ESAlertView *)alertView
-{
-    //开启数据库
-    ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
-    if ([sqlUtil open]) {
-        
-        //ESUserConfigInfo类
-        ESUserConfigInfo *configData = [[ESUserConfigInfo alloc] init];
-        configData.userid = [userInfoDictionary objectForKey:@"uid"];
-        
-        //首先清空当前表内属于此用户的配置数据
-        NSString *deleteSQL = [NSString  stringWithFormat:@"DELETE FROM CONFIG WHERE USERID = %d",
-                               [configData.userid intValue]];
-        [sqlUtil execSQL:deleteSQL];
-        
-        //更新此用户的配置信息
-        //解析rooms数据，插入到数据库esdb的表config中
-        NSArray *rooms = [data objectForKey:@"rooms"];
-        NSArray *sites = [data objectForKey:@"sites"];
-        NSString *insertSQL = @"INSERT INTO CONFIG (USERID,PROVINCE,CITY,COUNTY,BUILDING,ROOM,TYPE) VALUES";
-        NSString *appendSQL = nil;
-        NSString *fullSQL = nil;
-        
-        alertView.progressView.progress = 0;
-        int len = [rooms count];
-        len = len + [sites count];
-        
-        for (int i = 0; i < [rooms count]; ++i) {
-            
-            [configData setRoomValue:rooms[i]];
-            
-            //构建insert语句
-            appendSQL = [NSString stringWithFormat:@" (%d,'%@','%@','%@','%@','%@',1)",[configData.userid intValue],configData.province,configData.city,configData.county,configData.building,configData.room];
-            
-            fullSQL = [insertSQL stringByAppendingString:appendSQL];
-            
-            if (![sqlUtil execSQL:fullSQL]) {
-                return NO;
-            }
-            
-            [alertView performSelectorOnMainThread:@selector(updateLoadingProgress:) withObject:[NSNumber numberWithFloat:(float)i/len] waitUntilDone:YES];
-            
-        }
-        
-        //解析sites数据，插入到数据库esdb的表config中
-        insertSQL = @"INSERT INTO CONFIG (USERID,PROVINCE,CITY,COUNTY,BUILDING,SITE,TYPE) VALUES";
-        
-        for (int i = 0; i < [sites count]; ++i) {
-            
-            [configData setSiteValue:sites[i]];
-            
-            //构建insert语句
-            appendSQL = [NSString stringWithFormat:@" (%d,'%@','%@','%@','%@','%@',2)",[configData.userid intValue],configData.province,configData.city,configData.county,configData.building,configData.site];
-           
-            fullSQL = [insertSQL stringByAppendingString:appendSQL];
-            
-            //NSLog(@"%@",fullSQL);
-            if (![sqlUtil execSQL:fullSQL]) {
-                return NO;
-            }
-            
-            [alertView performSelectorOnMainThread:@selector(updateLoadingProgress:) withObject:[NSNumber numberWithFloat:(float)(i + [rooms count])/len] waitUntilDone:YES];
-            
-        }
-        
-        [alertView performSelectorOnMainThread:@selector(finishedProgress:) withObject:[NSString stringWithFormat:@"更新完成"] waitUntilDone:YES];
-        
-        [configData release];
-    } else {
-        return NO;
-    }
-    
-    [sqlUtil close];
-    [sqlUtil release];
-
-    return YES;
-}
+//未使用
+//- (BOOL) storeConfigInfoToDBDelegate:(NSDictionary *)data
+//                                    :(ESAlertView *)alertView
+//{
+//    //开启数据库
+//    ESSqliteUtil *sqlUtil = [[ESSqliteUtil alloc] init];
+//    if ([sqlUtil open]) {
+//        
+//        //ESUserConfigInfo类
+//        ESUserConfigInfo *configData = [[ESUserConfigInfo alloc] init];
+//        configData.userid = [userInfoDictionary objectForKey:@"uid"];
+//        
+//        //首先清空当前表内属于此用户的配置数据
+//        NSString *deleteSQL = [NSString  stringWithFormat:@"DELETE FROM CONFIG WHERE USERID = %d",
+//                               [configData.userid intValue]];
+//        [sqlUtil execSQL:deleteSQL];
+//        
+//        //更新此用户的配置信息
+//        //解析rooms数据，插入到数据库esdb的表config中
+//        NSArray *rooms = [data objectForKey:@"rooms"];
+//        NSArray *sites = [data objectForKey:@"sites"];
+//        NSString *insertSQL = @"INSERT INTO CONFIG (USERID,PROVINCE,CITY,COUNTY,BUILDING,ROOM,TYPE) VALUES";
+//        NSString *appendSQL = nil;
+//        NSString *fullSQL = nil;
+//        
+//        alertView.progressView.progress = 0;
+//        int len = [rooms count];
+//        len = len + [sites count];
+//        
+//        for (int i = 0; i < [rooms count]; ++i) {
+//            
+//            [configData setRoomValue:rooms[i]];
+//            
+//            //构建insert语句
+//            appendSQL = [NSString stringWithFormat:@" (%d,'%@','%@','%@','%@','%@',1)",[configData.userid intValue],configData.province,configData.city,configData.county,configData.building,configData.room];
+//            
+//            fullSQL = [insertSQL stringByAppendingString:appendSQL];
+//            
+//            if (![sqlUtil execSQL:fullSQL]) {
+//                return NO;
+//            }
+//            
+//            [alertView performSelectorOnMainThread:@selector(updateLoadingProgress:) withObject:[NSNumber numberWithFloat:(float)i/len] waitUntilDone:YES];
+//            
+//        }
+//        
+//        //解析sites数据，插入到数据库esdb的表config中
+//        insertSQL = @"INSERT INTO CONFIG (USERID,PROVINCE,CITY,COUNTY,BUILDING,SITE,TYPE) VALUES";
+//        
+//        for (int i = 0; i < [sites count]; ++i) {
+//            
+//            [configData setSiteValue:sites[i]];
+//            
+//            //构建insert语句
+//            appendSQL = [NSString stringWithFormat:@" (%d,'%@','%@','%@','%@','%@',2)",[configData.userid intValue],configData.province,configData.city,configData.county,configData.building,configData.site];
+//           
+//            fullSQL = [insertSQL stringByAppendingString:appendSQL];
+//            
+//            //NSLog(@"%@",fullSQL);
+//            if (![sqlUtil execSQL:fullSQL]) {
+//                return NO;
+//            }
+//            
+//            [alertView performSelectorOnMainThread:@selector(updateLoadingProgress:) withObject:[NSNumber numberWithFloat:(float)(i + [rooms count])/len] waitUntilDone:YES];
+//            
+//        }
+//        
+//        [alertView performSelectorOnMainThread:@selector(finishedProgress:) withObject:[NSString stringWithFormat:@"更新完成"] waitUntilDone:YES];
+//        
+//        [configData release];
+//    } else {
+//        return NO;
+//    }
+//    
+//    [sqlUtil close];
+//    [sqlUtil release];
+//
+//    return YES;
+//}
 
 - (BOOL)goToMainViewWithFirstLoginDelegate
 {
@@ -186,7 +187,7 @@
     }
 }
 
-- (void)getConfigInfoFromDBDelegate:(NSMutableArray *) data;
+- (void)getConfigInfoFromDBDelegate:(NSMutableArray *) data
 {
     ESUserConfigInfo *configData = [[ESUserConfigInfo alloc] init];
     configData.userid = [userInfoDictionary objectForKey:@"uid"];
@@ -215,8 +216,8 @@
 }
 
 - (void)getConfigInfoFromDBDelegate:(NSMutableArray *) data
-                                       :(NSString *) querySQL
-                                       :(int) colIndex
+                                   :(NSString *) querySQL
+                                   :(int) colIndex
 {
     ESUserConfigInfo *configData = [[ESUserConfigInfo alloc] init];
     configData.userid = [userInfoDictionary objectForKey:@"uid"];
@@ -244,13 +245,12 @@
 
 }
 
-- (void) loadConfigInfo:(NSString *)path
-{
-    NSString *cfgFileContent = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    NSLog(@"COMPLETED!");
-    NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:[cfgFileContent dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
-    //[self storeConfigInfoToDBDelegate:resultData];
-}
-
-
+//未使用到的方法
+//- (void) loadConfigInfo:(NSString *)path
+//{
+//    //NSString *cfgFileContent = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+//    NSLog(@"COMPLETED!");
+//    //NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:[cfgFileContent dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+//    //[self storeConfigInfoToDBDelegate:resultData];
+//}
 @end

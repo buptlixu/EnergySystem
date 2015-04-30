@@ -56,12 +56,13 @@
     [self updateProgress];
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *) connection
-{
-    NSLog(@"loading finish");
-    [_data writeToFile:_path atomically:YES];
-    [self performSelectorInBackground:@selector(loadConfigInfo) withObject:nil];
-}
+//XB未使用
+//- (void)connectionDidFinishLoading:(NSURLConnection *) connection
+//{
+//    NSLog(@"loading finish");
+//    [_data writeToFile:_path atomically:YES];
+//    [self performSelectorInBackground:@selector(loadConfigInfo) withObject:nil];
+//}
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
@@ -83,17 +84,18 @@
     [_alertView show];
 }
 
-- (void) loadConfigInfo
-{
-    NSError *error = [[NSError alloc] init];
-    _cfgFileContent = [NSString stringWithContentsOfFile:_path encoding:NSUTF8StringEncoding error:&error];
-    NSData *contentData = [[NSData alloc] init];
-    contentData = [_cfgFileContent dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:contentData options:kNilOptions error:nil];
-    _delegate = [[ESDataManageDelegate alloc] init];
-    [self.delegate storeConfigInfoToDBDelegate:resultData:_alertView];
-}
+//XB未使用
+//- (void) loadConfigInfo
+//{
+//    NSError *error = [[NSError alloc] init];
+//    _cfgFileContent = [NSString stringWithContentsOfFile:_path encoding:NSUTF8StringEncoding error:&error];
+//    NSData *contentData = [[NSData alloc] init];
+//    contentData = [_cfgFileContent dataUsingEncoding:NSUTF8StringEncoding];
+//    
+//    NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:contentData options:kNilOptions error:nil];
+//    _delegate = [[ESDataManageDelegate alloc] init];
+//    [self.delegate storeConfigInfoToDBDelegate:resultData:_alertView];
+//}
 
 
 @end

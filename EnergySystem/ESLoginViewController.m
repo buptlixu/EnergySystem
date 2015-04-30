@@ -149,8 +149,6 @@
 //    } else {
 //        [self performSelectorOnMainThread:@selector(goToMainView) withObject:nil waitUntilDone:FALSE];
 //    }
-    
-    
 }
 
 //委托连接服务器端，验证用户名／密码
@@ -160,7 +158,7 @@
     NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
     
     self.delegate = esDMDelegate;
-    [self.delegate loginDeletegate:self.userName.text :self.passWord.text :result];
+    [self.delegate loginDelegate:self.userName.text :self.passWord.text :result];
     
     NSData *data = [result objectForKey:@"data"];
     NSError *connectionError = [result objectForKey:@"connectionError"];

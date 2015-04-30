@@ -14,12 +14,11 @@
 
 - (void)getUserConfigInfoDelegate:(NSMutableData *) data;
 
-- (void)loginDeletegate:(NSString *) password
+- (void)loginDelegate:(NSString *) password
                        :(NSString *) username
                        :(NSDictionary *) result;
 
-- (BOOL)storeConfigInfoToDBDelegate:(NSDictionary *) data
-                                   :(ESAlertView *)alertView;
+//XB未使用- (BOOL)storeConfigInfoToDBDelegate:(NSDictionary *) data :(ESAlertView *)alertView;
 
 - (BOOL)goToMainViewWithFirstLoginDelegate;
 
@@ -28,6 +27,6 @@
 - (void)getConfigInfoFromDBDelegate:(NSMutableArray *) data
                                    :(NSString *) querySQL
                                    :(int) colIndex;
-- (void)loadConfigInfo:(NSString *) path;
+//XB未使用- (void)loadConfigInfo:(NSString *) path;
 
 @end

@@ -282,10 +282,10 @@
 			children = (
 				4261B70719AB242F00A91C86 /* ESLoginViewController.h */,
 				4261B70819AB242F00A91C86 /* ESLoginViewController.m */,
-				4201143219ADDCC900A0BF7F /* ESMainViewController.h */,
 				17B0A6EF1AD4CC320094C092 /* ESSearchMainViewController.h */,
-				4201143319ADDCC900A0BF7F /* ESMainViewController.m */,
 				17B0A6F01AD4CC320094C092 /* ESSearchMainViewController.m */,
+				4201143219ADDCC900A0BF7F /* ESMainViewController.h */,
+				4201143319ADDCC900A0BF7F /* ESMainViewController.m */,
 				42FD3D2F1A67A040006B5CCD /* ESSeachInfoViewController.h */,
 				42FD3D301A67A040006B5CCD /* ESSeachInfoViewController.m */,
 				42F27A3C1AA7FD50005A9F92 /* ESSiteSearchInfoViewController.h */,
@@ -294,12 +294,12 @@
 				42F27A371AA6A3E1005A9F92 /* ESTitleManageViewController.m */,
 				42F27A391AA6EB20005A9F92 /* ESTitleDetailViewController.h */,
 				42F27A3A1AA6EB20005A9F92 /* ESTitleDetailViewController.m */,
+				42F27A741AC3A484005A9F92 /* ESSearchResultTabBarViewController.h */,
+				42F27A751AC3A484005A9F92 /* ESSearchResultTabBarViewController.m */,
 				42F27A5B1AC147DB005A9F92 /* ESSearchResultViewController.h */,
 				42F27A5C1AC147DB005A9F92 /* ESSearchResultViewController.m */,
 				42F27A711AC2A3B2005A9F92 /* ESSearchResultChartViewController.h */,
 				42F27A721AC2A3B2005A9F92 /* ESSearchResultChartViewController.m */,
-				42F27A741AC3A484005A9F92 /* ESSearchResultTabBarViewController.h */,
-				42F27A751AC3A484005A9F92 /* ESSearchResultTabBarViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

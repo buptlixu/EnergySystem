@@ -35,11 +35,22 @@
     NSLog(@"%d",[_data count]);
     NSLog(@"%@",[[_data objectAtIndex:0] objectForKey:@"date"]);
     
-    for (int i = 0; i < [_data count]; ++i) {
-        [_xDate addObject:[[_data objectAtIndex:i] objectForKey:@"date"]];
+    for (int i = 0; i < [_data count]; ++i)
+    {
+        id tempDate = [[_data objectAtIndex:i] objectForKey:@"date"];
+        NSRange dateRange = NSMakeRange(5, 5);
+        NSString *xLabel = [[tempDate description] substringWithRange:dateRange];
+        [_xDate addObject:xLabel];
     }
-
     return _xDate;
+#warning 目前无法数据库中没有以小时为单位的数据，因此横坐标只做日期处理
+//当有小时为单位的数据是，用此进行判断即可
+//    if (日为单位) {
+//        dateRange = NSMakeRange(5, 5);
+//    } else {
+//        dateRange = NSMakeRange(11, 5);
+//    }
+    
 }
 
 - (NSArray *)UUChart_yValueArray:(UUChart *)chart
@@ -114,8 +125,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 1) {
-        return 30.0f;
+//    if (section == 1) {
+//        return 30.0f;
+//    } else {
+//        return UITableViewAutomaticDimension;
+//    }
+#warning XB为什么没有办法显示顶部
+    if (section == 0) {
+        return 90.0f;
     } else {
         return UITableViewAutomaticDimension;
     }

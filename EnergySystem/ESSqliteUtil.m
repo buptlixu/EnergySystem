@@ -27,7 +27,6 @@
     } else {
         return YES;
     }
-
 }
 
 -(BOOL)close

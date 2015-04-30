@@ -72,10 +72,9 @@
     
     for (int i=0; i<5; i++) {
         UUChartLabel * label = [[UUChartLabel alloc] initWithFrame:CGRectMake(0.0,chartCavanHeight-i*levelHeight+5, UUYLabelwidth, UULabelHeight)];
-		label.text = [NSString stringWithFormat:@"%.1f",level * i+_yValueMin];
+		label.text = [NSString stringWithFormat:@"%d",(int)(level * i+_yValueMin)];
 		[self addSubview:label];
     }
-	
 }
 
 -(void)setXLabels:(NSArray *)xLabels
@@ -102,15 +101,18 @@
         myScrollView.contentSize = CGSizeMake(max, self.frame.size.height);
     }
 }
--(void)setColors:(NSArray *)colors
+
+- (void)setColors:(NSArray *)colors
 {
 	_colors = colors;
 }
+
 - (void)setChooseRange:(CGRange)chooseRange
 {
     _chooseRange = chooseRange;
 }
--(void)strokeChart
+
+- (void)strokeChart
 {
     
     CGFloat chartCavanHeight = self.frame.size.height - UULabelHeight*3;
