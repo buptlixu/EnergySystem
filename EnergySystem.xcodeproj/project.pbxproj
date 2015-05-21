@@ -12,6 +12,8 @@
 		17B0A6E91AD4C2060094C092 /* nvg_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B0A6E81AD4C2060094C092 /* nvg_bg.png */; };
 		17B0A6F11AD4CC320094C092 /* ESSearchMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B0A6F01AD4CC320094C092 /* ESSearchMainViewController.m */; };
 		17B0A6F31AD4CCD80094C092 /* general_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 17B0A6F21AD4CCD80094C092 /* general_bg.png */; };
+		17C2A58B1AF220470071FFCF /* ESWarnSearchInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C2A58A1AF220470071FFCF /* ESWarnSearchInfoViewController.m */; };
+		17C2A58E1AF230DC0071FFCF /* ESWarnSearchConditionDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C2A58D1AF230DC0071FFCF /* ESWarnSearchConditionDataModel.m */; };
 		17C2EEF51ACE47C9005CD04A /* savePW.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2EEF41ACE47C9005CD04A /* savePW.png */; };
 		17C2EEF71ACE4957005CD04A /* notSavePW.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2EEF61ACE4957005CD04A /* notSavePW.png */; };
 		17F4371C1AE8AB7A00A4E5CA /* detail_bt.png in Resources */ = {isa = PBXBuildFile; fileRef = 17F4371B1AE8AB7A00A4E5CA /* detail_bt.png */; };
@@ -88,6 +90,10 @@
 		17B0A6EF1AD4CC320094C092 /* ESSearchMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSearchMainViewController.h; sourceTree = "<group>"; };
 		17B0A6F01AD4CC320094C092 /* ESSearchMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSearchMainViewController.m; sourceTree = "<group>"; };
 		17B0A6F21AD4CCD80094C092 /* general_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = general_bg.png; sourceTree = "<group>"; };
+		17C2A5891AF220470071FFCF /* ESWarnSearchInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESWarnSearchInfoViewController.h; sourceTree = "<group>"; };
+		17C2A58A1AF220470071FFCF /* ESWarnSearchInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESWarnSearchInfoViewController.m; sourceTree = "<group>"; };
+		17C2A58C1AF230DC0071FFCF /* ESWarnSearchConditionDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESWarnSearchConditionDataModel.h; sourceTree = "<group>"; };
+		17C2A58D1AF230DC0071FFCF /* ESWarnSearchConditionDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESWarnSearchConditionDataModel.m; sourceTree = "<group>"; };
 		17C2EEF41ACE47C9005CD04A /* savePW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = savePW.png; sourceTree = "<group>"; };
 		17C2EEF61ACE4957005CD04A /* notSavePW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notSavePW.png; sourceTree = "<group>"; };
 		17F4371B1AE8AB7A00A4E5CA /* detail_bt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detail_bt.png; sourceTree = "<group>"; };
@@ -233,6 +239,8 @@
 				42F27A341AA59F1B005A9F92 /* ESRoomSearchCondition.m */,
 				42F27A3F1AA80179005A9F92 /* ESSiteSearchCondition.h */,
 				42F27A401AA80179005A9F92 /* ESSiteSearchCondition.m */,
+				17C2A58C1AF230DC0071FFCF /* ESWarnSearchConditionDataModel.h */,
+				17C2A58D1AF230DC0071FFCF /* ESWarnSearchConditionDataModel.m */,
 				42F27A771AC3A5C5005A9F92 /* ESSearchCondtionDataModel.h */,
 				42F27A781AC3A5C5005A9F92 /* ESSearchCondtionDataModel.m */,
 			);
@@ -300,6 +308,8 @@
 				42F27A5C1AC147DB005A9F92 /* ESSearchResultViewController.m */,
 				42F27A711AC2A3B2005A9F92 /* ESSearchResultChartViewController.h */,
 				42F27A721AC2A3B2005A9F92 /* ESSearchResultChartViewController.m */,
+				17C2A5891AF220470071FFCF /* ESWarnSearchInfoViewController.h */,
+				17C2A58A1AF220470071FFCF /* ESWarnSearchInfoViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -523,6 +533,7 @@
 				42F27A351AA59F1B005A9F92 /* ESRoomSearchCondition.m in Sources */,
 				42F27A731AC2A3B2005A9F92 /* ESSearchResultChartViewController.m in Sources */,
 				4261B72C19AB271B00A91C86 /* MBProgressHUD.m in Sources */,
+				17C2A58B1AF220470071FFCF /* ESWarnSearchInfoViewController.m in Sources */,
 				42F8EFEB1A5BDD9B008D1F3E /* ESDownLoadFile.m in Sources */,
 				17B0A6F11AD4CC320094C092 /* ESSearchMainViewController.m in Sources */,
 				42753DC919AE034200CA3D44 /* ESSqliteUtil.m in Sources */,
@@ -545,6 +556,7 @@
 				42FD3D311A67A040006B5CCD /* ESSeachInfoViewController.m in Sources */,
 				4201143419ADDCC900A0BF7F /* ESMainViewController.m in Sources */,
 				42DCA6201A5D0FF300C0765B /* ESAlertView.m in Sources */,
+				17C2A58E1AF230DC0071FFCF /* ESWarnSearchConditionDataModel.m in Sources */,
 				42F27A761AC3A484005A9F92 /* ESSearchResultTabBarViewController.m in Sources */,
 				42F27A411AA80179005A9F92 /* ESSiteSearchCondition.m in Sources */,
 			);

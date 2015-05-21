@@ -11,6 +11,7 @@
 @interface ESSearchResultViewController ()
 {
     NSArray *_data;
+#warning 可以在这里加一个bool判断，或者为_data末尾头部加一个特殊对象
 }
 @end
 
@@ -32,9 +33,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    //[tableView setDataSource:self];
-    //[tableView setDelegate:self];
     
     [pTableView setDataSource:self];
     [pTableView setDelegate:self];
@@ -60,6 +58,7 @@
     return 8;
 }
 
+#warning 进度 表格信息展示未开始
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"resultDetailCell";

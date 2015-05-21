@@ -143,7 +143,7 @@
     
     [loginHUD release];
     
-//    //服务器未开启时使用，进行正常登录跳转
+//    服务器未开启时使用，进行正常登录跳转
 //    if ([self.delegate goToMainViewWithFirstLoginDelegate]){
 //        [self performSelectorOnMainThread:@selector(goToGuideView) withObject:nil waitUntilDone:FALSE];
 //    } else {

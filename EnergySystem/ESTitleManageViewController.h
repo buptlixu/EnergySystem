@@ -20,6 +20,7 @@
     NSMutableArray *_types;
     NSMutableArray *_provinces;
     NSMutableArray *_cities;
+    NSMutableArray *_warnOrNot;
 }
 @property (retain, nonatomic) IBOutlet UITableView *pTableView;
 

@@ -10,11 +10,13 @@
 
 #import "ESConstants.h"
 #import "ESSearchCondtionDataModel.h"
+#import "ESWarnSearchConditionDataModel.h"
 #import "ESSearchResultViewController.h"
 #import "ESSearchResultChartViewController.h"
 
 @interface ESSearchResultTabBarViewController : UITabBarController
 
 @property (retain,nonatomic) ESSearchCondtionDataModel *scDataModel;
+@property (retain,nonatomic) ESWarnSearchConditionDataModel *wscDataModel;
 
 @end

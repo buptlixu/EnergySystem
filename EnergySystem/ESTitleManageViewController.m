@@ -30,6 +30,7 @@
     _provinces = [[NSMutableArray alloc] init];
     _cities = [[NSMutableArray alloc] init];
     _types = [[NSMutableArray alloc] init];
+    _warnOrNot = [[NSMutableArray alloc] init];
     
     
     [self loadTitleTable];
@@ -51,23 +52,34 @@
         NSString *querySQL = [NSString stringWithFormat:@"SELECT USERID,NAME,TYPE,PROVINCE,CITY FROM TITLETABLE WHERE USERID = %d",[userID intValue]];
         if (sqlite3_prepare_v2(sqlUtil.db, [querySQL UTF8String], -1, &stmt, nil) == SQLITE_OK)
         {
-            
             while (sqlite3_step(stmt) == SQLITE_ROW) {
                 [_names addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,1)]];
                 [_types addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,2)]];
                 [_provinces addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,3)]];
                 [_cities addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,4)]];
+                [_warnOrNot addObject:[[NSString alloc] initWithFormat:@"NO"]];
             }
         }
+        
+        //XB打开能耗告警表格
+#warning 为什么已经没有数据了执行结果还是SQLITE_OK
+        querySQL = [NSString stringWithFormat:@"SELECT USERID,NAME,TYPE,PROVINCE,CITY FROM WARNTITLETABLE WHERE USERID = %d", [userID intValue]];
+        if (sqlite3_prepare_v2(sqlUtil.db, [querySQL UTF8String], -1, &stmt, nil) == SQLITE_OK)
+        {
+            while (sqlite3_step(stmt) == SQLITE_ROW) {
+                [_names addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,1)]];
+                [_types addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,2)]];
+                [_provinces addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,3)]];
+                [_cities addObject:[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt,4)]];
+                [_warnOrNot addObject:[[NSString alloc] initWithFormat:@"YES"]];
+            }
+        }
+        
         [sqlUtil close];
     } else {
         NSLog(@"数据库打开失败");
         [sqlUtil close];
     }
-//    if ([sqlUtil open]) {
-//        
-//        
-//    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -95,16 +107,22 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    
-    
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [_names objectAtIndex:row];
     cell.detailTextLabel.text = [_types objectAtIndex:row];
-    if ([[_types objectAtIndex:row]  isEqual: @"机房"]) {
-        cell.imageView.image = [UIImage imageNamed:@"room.png"];
-    } else {
-        cell.imageView.image = [UIImage imageNamed:@"base_station.png"];
+    
+//  XB判断是告警还是普通查询以配不同图标
+    if ([[_warnOrNot objectAtIndex:row]  isEqual: @"YES"]) {
+        cell.imageView.image = [UIImage imageNamed:@"warn.png"];
     }
+    else {
+        if ([[_types objectAtIndex:row]  isEqual: @"机房"]) {
+            cell.imageView.image = [UIImage imageNamed:@"room.png"];
+        } else {
+            cell.imageView.image = [UIImage imageNamed:@"base_station.png"];
+        }
+    }
+    
     cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:@"、"];
     cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:[_provinces objectAtIndex:row]];
     cell.detailTextLabel.text = [cell.detailTextLabel.text stringByAppendingString:@"、"];
@@ -131,7 +149,14 @@
             if (![sqlUtil execSQL:deleteSQL]) {
                 NSLog(@"DELETE ERROR");
             }
-
+        //  XB无法确定删除的是哪张表,但非1即2
+            else {
+                deleteSQL = [NSString stringWithFormat:@"DELETE FROM WARNTITLETABLE WHERE NAME = '%@'", [_names objectAtIndex:indexPath.row]];
+                if (![sqlUtil execSQL:deleteSQL]) {
+                    NSLog(@"DELETE ERROR");
+                }
+            }
+            
             [sqlUtil close];
         }
         
