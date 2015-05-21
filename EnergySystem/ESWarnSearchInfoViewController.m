@@ -277,6 +277,11 @@
             
 }
 
+- (IBAction)dismissKeyboardTapBackground:(UIControl *)sender
+{
+    [self.view endEditing:YES];
+}
+
 #warning UITextField 响应问题
 //- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 //{
@@ -369,6 +374,7 @@
     [_alertTypeBtn release];
     [_granularityBtn release];
     [_datePicker release];
+    [_settingButton release];
     [super dealloc];
 }
 

@@ -16,6 +16,7 @@
 {
     NSArray *_data;
 }
+@property (retain, nonatomic) IBOutlet UIButton *settingButton;
 @property (retain, nonatomic) IBOutlet UITableView *pTableView;
 @property (retain, nonatomic) IBOutlet UITextField *provinceText;
 @property (retain, nonatomic) IBOutlet UITextField *cityText;
@@ -34,5 +35,6 @@
 - (IBAction)getStaticConfigList:(id)sender;
 - (IBAction)saveSearchConditionIntoDB:(id)sender;
 - (IBAction)setDate:(id)sender;
+- (IBAction)dismissKeyboardTapBackground:(UIControl *)sender;
 
 @end

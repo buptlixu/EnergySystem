@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
-        <!--能耗分析系统-->
+        <!--Main View Controller - 能耗分析系统-->
         <scene sceneID="qG7-cJ-vGl">
             <objects>
                 <viewController id="pmr-un-b6C" customClass="ESMainViewController" sceneMemberID="viewController">
@@ -80,7 +79,7 @@
                                 <rect key="frame" x="21" y="295" width="91" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="warn.png">
-                                    <color key="titleColor" patternImage="287BC7CD-45E7-4974-B49B-9C645978D794" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="E2C71520-718D-453B-AB7E-0759D94C77A5" colorSpace="pattern"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -93,7 +92,7 @@
                         <barButtonItem key="backBarButtonItem" title="返回" id="p81-NZ-uPe"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="UbG-D1-gzD">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p0a-EO-6UP">
-                                <rect key="frame" x="191" y="196" width="100" height="64"/>
+                                <rect key="frame" x="16" y="-10" width="100" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="退出">
@@ -131,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="-277" y="284"/>
         </scene>
-        <!--标题管理-->
+        <!--Title Manage View Controller - 标题管理-->
         <scene sceneID="R1h-Pt-IJT">
             <objects>
                 <viewController title="标题管理" id="eX4-BO-VJ8" customClass="ESTitleManageViewController" sceneMemberID="viewController">
@@ -145,21 +144,21 @@
                                 <color key="backgroundColor" red="0.59610615079999996" green="0.396770648" blue="0.21069756040000001" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="top" selectionStyle="none" showsReorderControl="YES" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="titleCell" textLabel="Hka-er-TGP" detailTextLabel="Oi2-yZ-Ji3" imageView="dj8-ZH-o0d" rowHeight="44" style="IBUITableViewCellStyleSubtitle" id="a2u-In-siG">
-                                        <rect key="frame" x="0.0" y="50" width="322" height="44"/>
+                                        <rect key="frame" x="0.0" y="119" width="322" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="a2u-In-siG" id="UoT-B3-q96">
                                             <rect key="frame" x="0.0" y="0.0" width="289" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hka-er-TGP">
-                                                    <rect key="frame" x="73" y="3" width="34" height="22"/>
+                                                    <rect key="frame" x="15" y="3" width="34" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Oi2-yZ-Ji3">
-                                                    <rect key="frame" x="73" y="25" width="43" height="15"/>
+                                                    <rect key="frame" x="15" y="25" width="43" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -216,7 +215,7 @@
                                 <color key="backgroundColor" red="0.59610615079999996" green="0.396770648" blue="0.21069756040000001" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleDetailCell" id="pC3-Gy-cq7">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pC3-Gy-cq7" id="CAB-ai-E1l">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -278,7 +277,7 @@
             </objects>
             <point key="canvasLocation" x="1590" y="146"/>
         </scene>
-        <!--表格-->
+        <!--Search Result View Controller - 表格-->
         <scene sceneID="RAi-RJ-1zW">
             <objects>
                 <viewController id="ix5-rN-TaZ" customClass="ESSearchResultViewController" sceneMemberID="viewController">
@@ -288,7 +287,7 @@
                         <color key="backgroundColor" red="0.89411764705882357" green="0.84705882352941175" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultDetailCell" id="h6N-5k-vjG">
-                                <rect key="frame" x="0.0" y="50" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h6N-5k-vjG" id="bIT-IF-86Z">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -326,7 +325,7 @@
             </objects>
             <point key="canvasLocation" x="1647" y="-512"/>
         </scene>
-        <!--图表-->
+        <!--Search Result Chart View Controller - 图表-->
         <scene sceneID="XIe-ge-Ou8">
             <objects>
                 <viewController id="igS-KR-WDH" customClass="ESSearchResultChartViewController" sceneMemberID="viewController">
@@ -340,7 +339,7 @@
                                 <color key="backgroundColor" red="0.89411764709999997" green="0.84705882349999995" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chartCell" id="XcC-4w-mZs">
-                                        <rect key="frame" x="0.0" y="50" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XcC-4w-mZs" id="RUc-Q4-PAp">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -449,7 +448,7 @@
             </objects>
             <point key="canvasLocation" x="-1398" y="-943"/>
         </scene>
-        <!--设置查询条件-->
+        <!--Search Main View Controller - 设置查询条件-->
         <scene sceneID="Wbh-wE-uRV">
             <objects>
                 <viewController id="Cfc-Bw-8Wo" customClass="ESSearchMainViewController" sceneMemberID="viewController">
@@ -517,7 +516,7 @@
             </objects>
             <point key="canvasLocation" x="-277" y="-1394"/>
         </scene>
-        <!--机房查询设置-->
+        <!--Seach Info View Controller - 机房查询设置-->
         <scene sceneID="oV3-d7-u6G">
             <objects>
                 <viewController title="机房查询设置" id="aEG-EN-cpP" customClass="ESSeachInfoViewController" sceneMemberID="viewController">
@@ -742,7 +741,7 @@
             </objects>
             <point key="canvasLocation" x="480" y="-1852"/>
         </scene>
-        <!--基站查询设置-->
+        <!--Site Search Info View Controller - 基站查询设置-->
         <scene sceneID="PBm-ca-uUB">
             <objects>
                 <viewController title="基站查询设置" id="5SE-oR-qc3" customClass="ESSiteSearchInfoViewController" sceneMemberID="viewController">
@@ -934,7 +933,7 @@
             </objects>
             <point key="canvasLocation" x="480" y="-1208"/>
         </scene>
-        <!--mainNavCon-->
+        <!--Navigation Controller - mainNavCon-->
         <scene sceneID="afk-7v-J3J">
             <objects>
                 <navigationController title="mainNavCon" automaticallyAdjustsScrollViewInsets="NO" id="bVm-zC-bLj" sceneMemberID="viewController">
@@ -994,11 +993,11 @@
             </objects>
             <point key="canvasLocation" x="202" y="-512"/>
         </scene>
-        <!--告警查询设置-->
+        <!--Warn Search Info View Controller - 告警查询设置-->
         <scene sceneID="VLF-74-nOu">
             <objects>
                 <viewController title="告警查询设置" id="83p-8H-gxs" customClass="ESWarnSearchInfoViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SCD-Lc-PPP">
+                    <view key="view" contentMode="scaleToFill" id="SCD-Lc-PPP" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -1145,6 +1144,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="dismissKeyboardTapBackground:" destination="83p-8H-gxs" eventType="touchDown" id="KqP-PI-fWM"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="告警查询设置" id="k9J-HT-Z5W">
                         <barButtonItem key="backBarButtonItem" id="oHZ-LA-HQp"/>
@@ -1162,6 +1164,7 @@
                         <outlet property="placeTypeText" destination="xtA-36-Iek" id="WLm-Ks-gST"/>
                         <outlet property="provinceBtn" destination="aka-na-9x8" id="s3e-nT-9MS"/>
                         <outlet property="provinceText" destination="Pr2-D1-rPC" id="P69-Ri-70b"/>
+                        <outlet property="settingButton" destination="ywp-M9-vCo" id="LlK-tU-tQv"/>
                         <outlet property="startDateText" destination="WqE-cZ-tpS" id="SlG-dK-axK"/>
                         <segue destination="bVm-zC-bLj" kind="modal" identifier="mainNavCon" id="PRf-L1-Vh3"/>
                     </connections>
@@ -1172,7 +1175,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="287BC7CD-45E7-4974-B49B-9C645978D794" width="320" height="460">
+        <image name="E2C71520-718D-453B-AB7E-0759D94C77A5" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -11068,14 +11071,14 @@ AAAAAAAAAAAJCvs
         <image name="title.png" width="512" height="512"/>
         <image name="warn.png" width="280" height="285"/>
     </resources>
+    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="l4o-1P-PsS"/>
-        <segue reference="aT5-z3-bnC"/>
+        <segue reference="3nL-dF-u93"/>
+        <segue reference="3QT-im-18l"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

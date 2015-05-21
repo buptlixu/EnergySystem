@@ -31,7 +31,7 @@ static NSString *configAction  = @"Configuration_UserBasicAction.action?companyI
 static NSString *UserSettingAction = @"UserSetting_UserQueryAction.action?";
 static NSString *GetDataAction = @"GetData_UserQueryAction.action?";
 static NSString *configFilePath = @"resources/downloads/";
-
+static NSString *GetBaojingInfoAction = @"GetBaojingInfo_UserQueryAction.action?";
 @interface ESConstants : NSObject
 
 @end
