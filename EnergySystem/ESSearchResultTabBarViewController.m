@@ -209,7 +209,7 @@
         NSNumber *status = [resultData objectForKey:@"status"];
         if ([status intValue] == 200) {
             if ([self.scDataModel.placeType isEqualToString:@"机房"]) {
-                
+//XB从查询结果中分离出需要的数据，最后赋给_data
                 _tmpData = [resultData objectForKey:@"room_data"];
                 _data = [_tmpData objectForKey:@"data"];
                 
