@@ -79,7 +79,7 @@
     
 }
 
-- (IBAction)checkBoxButton:(id)sender//根据当前状态对勾选框进行图形更改
+- (IBAction)checkBoxButton:(id)sender//XB根据当前状态对勾选框进行图形更改
 {
     
     if (self.saveUserNameButton.selected) {
@@ -143,7 +143,7 @@
     
     [loginHUD release];
     
-//    服务器未开启时使用，进行正常登录跳转
+////    服务器未开启时使用，进行正常登录跳转
 //    if ([self.delegate goToMainViewWithFirstLoginDelegate]){
 //        [self performSelectorOnMainThread:@selector(goToGuideView) withObject:nil waitUntilDone:FALSE];
 //    } else {

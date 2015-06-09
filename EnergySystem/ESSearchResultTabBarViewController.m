@@ -86,12 +86,9 @@
     extern NSDictionary *userInfoDictionary;
     NSNumber *userID = [userInfoDictionary objectForKey:@"uid"];
     
-    [url appendFormat:@"%@%@uid=%d",
-                    serverHttpUrl,UserSettingAction,[userID intValue]];
-    
-    
     if (self.scDataModel != nil)
     {
+        [url appendFormat:@"%@%@uid=%d", serverHttpUrl,UserSettingAction,[userID intValue]];
         [url appendFormat:@"&province=%@",self.scDataModel.province];
         
         if (self.scDataModel.city != nil) {
@@ -162,6 +159,7 @@
 //  XB对于不同的查询拼接不同的URL，此处为告警查询的url
     else if (self.wscDataModel != nil)
     {
+        [url appendFormat:@"%@%@uid=%d", serverHttpUrl,GetBaojingInfoAction,[userID intValue]];
         [url appendFormat:@"&province=%@", self.wscDataModel.province];
         [url appendFormat:@"&city=%@", self.wscDataModel.city];
         [url appendFormat:@"&alertType=%@", self.wscDataModel.alertType];
@@ -205,18 +203,22 @@
                                                                    options:NSJSONReadingMutableLeaves
                                                                      error:nil];
         NSDictionary *_tmpData = [[NSDictionary alloc] init];
-#warning 进度 05-21 从服务器端读取数据，目前没有数据获得
         NSNumber *status = [resultData objectForKey:@"status"];
+        
         if ([status intValue] == 200) {
-            if ([self.scDataModel.placeType isEqualToString:@"机房"]) {
-//XB从查询结果中分离出需要的数据，最后赋给_data
-                _tmpData = [resultData objectForKey:@"room_data"];
-                _data = [_tmpData objectForKey:@"data"];
-                
-            } else if ([self.scDataModel.placeType isEqualToString:@"基站"]) {
-                
-                _tmpData = [resultData objectForKey:@"site_data"];
-                _data = [_tmpData objectForKey:@"data"];
+            if (self.scDataModel != nil) {
+                if ([self.scDataModel.placeType isEqualToString:@"机房"]) {
+    //XB从查询结果中分离出需要的数据，最后赋给_data
+                    _tmpData = [resultData objectForKey:@"room_data"];
+                    _data = [_tmpData objectForKey:@"data"];
+                    
+                } else if ([self.scDataModel.placeType isEqualToString:@"基站"]) {
+                    
+                    _tmpData = [resultData objectForKey:@"site_data"];
+                    _data = [_tmpData objectForKey:@"data"];
+                }
+            } else {
+                _data = [resultData objectForKey:@"warningList"];
             }
             
             [_data retain];

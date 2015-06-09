@@ -11,7 +11,6 @@
 @interface ESSearchResultViewController ()
 {
     NSArray *_data;
-#warning 可以在这里加一个bool判断，或者为_data末尾头部加一个特殊对象
 }
 @end
 
@@ -55,10 +54,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    return [[_data objectAtIndex:section] count];
 }
 
-#warning 进度 表格信息展示未开始
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"resultDetailCell";
@@ -74,51 +72,80 @@
     NSUInteger section = [indexPath section];
     NSUInteger row = [indexPath row];
 
-    switch (row) {
-        case 0:
-            cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"日期:",
-                                   [[_data objectAtIndex:section]
-                                                objectForKey:@"date"]];
-            break;
-        case 1:
-            cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"地点:",
-                                   [[_data objectAtIndex:section]
-                                                objectForKey:@"location"]];
-            break;
-        case 2:
-            cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"总能耗:",
-                                   [[_data objectAtIndex:section]
-                                    objectForKey:@"sum"]];
-            break;
-        case 3:
-            cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"主设备能耗:",
-                                   [[_data objectAtIndex:section]
-                                    objectForKey:@"primaryDevice"]];
-            break;
-        case 4:
-            cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"空调能耗:",
-                                   [[_data objectAtIndex:section]
-                                    objectForKey:@"cooling"]];
-            break;
-        case 5:
-            cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"照明:",
-                                   [[_data objectAtIndex:section]
-                                    objectForKey:@"lighting"]];
-            break;
-        case 6:
-            cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"插座:",
-                                   [[_data objectAtIndex:section]
-                                    objectForKey:@"SMPS"]];
-            break;
-        case 7:
-            cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"其他:",
-                                   [[_data objectAtIndex:section]
-                                    objectForKey:@"other"]];
-            break;
-        default:
-            break;
-    }
+    if ([[_data objectAtIndex:section] count] == 4)//告警信息展示
+    {
+        switch (row) {
+            case 0:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"日期：",
+                                       [[_data objectAtIndex:section]
+                                        objectForKey:@"time"]];
+                break;
+            case 1:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"地点：",
+                                       [[_data objectAtIndex:section]
+                                        objectForKey:@"location"]];
+                break;
+            case 2:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"数值：",
+                                       [[_data objectAtIndex:section]
+                                        objectForKey:@"value"]];
+                break;
+            case 3:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"级别：",
+                                       [[_data objectAtIndex:section]
+                                        objectForKey:@"level"]];
+                break;
+        }
     
+    }
+    else
+    {
+        switch (row) {
+            case 0:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"日期：",
+                                       [[_data objectAtIndex:section]
+                                                    objectForKey:@"date"]];
+                break;
+            case 1:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"地点：",
+                                       [[_data objectAtIndex:section]
+                                                    objectForKey:@"location"]];
+                break;
+            case 2:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"总能耗：",
+                                       [[_data objectAtIndex:section]
+                                        objectForKey:@"sum"]];
+                break;
+            case 3:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"主设备能耗：",
+                                       [[_data objectAtIndex:section]
+                                        objectForKey:@"primaryDevice"]];
+                break;
+            case 4:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"空调能耗：",
+                                       [[_data objectAtIndex:section]
+                                        objectForKey:@"cooling"]];
+                break;
+            case 5:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"照明：",
+                                       [[_data objectAtIndex:section]
+                                        objectForKey:@"lighting"]];
+                break;
+            case 6:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"插座：",
+                                       [[_data objectAtIndex:section]
+                                        objectForKey:@"SMPS"]];
+                break;
+            case 7:
+                cell.textLabel.text = [NSString stringWithFormat:@"%@%@",@"其他：",
+                                       [[_data objectAtIndex:section]
+                                        objectForKey:@"other"]];
+                break;
+            default:
+                break;
+        }
+    }
+
     return cell;
 }
 

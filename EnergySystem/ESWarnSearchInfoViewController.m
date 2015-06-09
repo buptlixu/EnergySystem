@@ -34,6 +34,16 @@
     [super viewWillAppear:YES];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"general_bg.png"]];
+    
+    UINavigationItem *barItem = [[UINavigationItem alloc] initWithTitle:@"告警查询设置"];
+    barItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(gotoMainView)];
+    
+    [self.navigationController.navigationBar pushNavigationItem:barItem animated:NO];
+}
+
+- (void) gotoMainView
+{
+    [self performSegueWithIdentifier:@"mainNavCon" sender:self];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -224,22 +234,6 @@
 {
     NSDateFormatter *fomatter = [[NSDateFormatter alloc] init];
     
-//    if ([self.startDateText isFirstResponder]) {
-//        if ([self.granularityText.text isEqualToString:@"小时"]) {
-//            fomatter.dateFormat = @"yyyy-MM-dd";
-//            self.startDateText.text = [fomatter stringFromDate:date.date];
-//            self.endDateText.text = self.startDateText.text;
-//        } else if([self.granularityText.text isEqualToString:@"日"]){
-//            fomatter.dateFormat = @"yyyy-MM-dd";
-//            self.startDateText.text = [fomatter stringFromDate:date.date];
-//        } else if([self.granularityText.text isEqualToString:@"月"]){
-//            fomatter.dateFormat = @"yyyy-MM";
-//            self.startDateText.text = [fomatter stringFromDate:date.date];
-//        }
-//    } else {
-//        self.endDateText.text = [fomatter stringFromDate:date.date];
-//    }
-    
     if ([self.granularityText.text isEqualToString:@"小时"] || [self.granularityText.text isEqualToString:@"日"])
     {
         fomatter.dateFormat = @"yyyy-MM-dd";
@@ -281,15 +275,6 @@
 {
     [self.view endEditing:YES];
 }
-
-#warning UITextField 响应问题
-//- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-//{
-////    if (textField.tag != 100) {
-////        textField.inputView = nil;
-////    }
-//    return YES;
-//}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
